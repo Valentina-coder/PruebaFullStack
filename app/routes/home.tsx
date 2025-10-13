@@ -1,13 +1,16 @@
-import type { Route } from "./+types/home";
-import  HomeLayout  from "../components/layouts/HomeLayout";
+// app/routes/Home.tsx (Asegúrate de importar ProjectGrid)
 
-export function meta({}: Route.MetaArgs) {
-  return [
-    { title: "Portafolio" },
-    { name: "description", content: "Portafolio Valentina Cortez!" },
-  ];
+import React from 'react';
+import MainBanner from '../components/organism/MainBanner'; 
+import ProjectGrid from '../components/organism/ProyectGrid'; 
+
+const Home: React.FC = () => {
+  return (
+    <div className="home-page">
+      <MainBanner /> 
+      <ProjectGrid /> {/* ⬅️ Aquí se mostrará tu cuadrícula de proyectos */}
+    </div>
+  );
 }
 
-export default function Home() {
-  return <HomeLayout />;
-}
+export default Home;
