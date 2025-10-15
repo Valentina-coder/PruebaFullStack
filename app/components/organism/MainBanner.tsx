@@ -1,69 +1,117 @@
 // app/components/organism/MainBanner/MainBanner.tsx
 
-import React from 'react';
-import { Row, Col, Typography, Button, Space, Image,} from 'antd';
-import { MailOutlined, DownloadOutlined , } from '@ant-design/icons';
+import React, { useState, useEffect } from "react";
+import { Row, Col, Typography, Button, Space, Image } from "antd";
+import { MailOutlined, DownloadOutlined } from "@ant-design/icons";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const { Title, Text } = Typography;
 
 const MainBanner: React.FC = () => {
+  const [showMessage, setShowMessage] = useState(false);
+
+  useEffect(() => {
+    if (showMessage) {
+      const timer = setTimeout(() => {
+        setShowMessage(false);
+      }, 4000);
+      return () => clearTimeout(timer);
+    }
+  }, [showMessage]);
+
+  const handleContactClick = () => {
+    setShowMessage(true);
+    window.location.href = "mailto:va.cortezz@duocuc.cl";
+  };
+
   return (
-    // Row para la estructura de dos columnas. style para darle altura.
-    <Row align="middle" style={{ minHeight: '80vh', padding: '40px 0' }}> 
-      
-      {/* Columna Izquierda: Texto y Botones */}
-      <Col xs={24} md={12} style={{ paddingRight: 30 }}>
-        <Text style={{ fontSize: '18px', color: '#595959' }}>
-          ¡Hola! Mi nombre es
-        </Text>
-        
-        <Title level={1} style={{ margin: '0 0 10px 0', fontSize: '4em' }}>
-          [Valentina Cortez Zuñiga]
-        </Title>
-        
-        <Title level={3} style={{ color: '#1890ff' }}>
-          Estudiante Ing en Informatica 
-        </Title>
-        
-        <p style={{ maxWidth: '450px', fontSize: '16px', marginTop: 20 }}>
-          Combino mis habilidades en **TSX** y **Ant Design** para construir aplicaciones funcionales y atractivas. 
-          Además, mi experiencia en Retail Paris como vendedora y atención al cliente los fines de semana me ha enseñado el valor de la comunicación efectiva y la resolución de problemas.
-        </p>
-        
-        <Space size="large" style={{ marginTop: 30 }}>
-          {/* Botón de Ant Design para contacto */}
-          <Button 
-            type="primary" 
-            size="large" 
-            icon={<MailOutlined />}
-            onClick={() => window.location.href = 'va.cortezz@duocuc.cl'}
+    <div className="container-fluid py-5" style={{ backgroundColor: "#0d1117" }}>
+      <Row
+        align="middle"
+        justify="center"
+        className="text-center text-md-start"
+        gutter={[32, 32]}
+      >
+        {/* Columna de texto */}
+        <Col xs={24} md={12} className="px-4">
+          <Text style={{ fontSize: "18px", color: "#8b949e" }}>
+            ¡Hola! Mi nombre es
+          </Text>
+
+          <Title
+            level={1}
+            className="fw-bold"
+            style={{ color: "#fff", fontSize: "3.5em" }}
           >
-            Contáctame
-          </Button>
-          
-          {/* Botón secundario para descargar CV */}
-          <Button 
-            size="large" 
-            icon={<DownloadOutlined />}
-            href="/cv/tu-cv.pdf" // Asegúrate de colocar tu CV en la carpeta /public
-            download
+            Valentina Cortez Zuñiga
+          </Title>
+
+          <Title level={3} style={{ color: "#58a6ff" }}>
+            Estudiante de Ingeniería en Informática
+          </Title>
+
+          <p
+            style={{
+              maxWidth: "480px",
+              color: "#ccc",
+              fontSize: "16px",
+              marginTop: 20,
+            }}
           >
-            Descargar CV
-          </Button>
-        </Space>
-      </Col>
-      
-      {/* Columna Derecha: Imagen/Avatar */}
-      <Col xs={24} md={12} style={{ textAlign: 'center' }}>
-        <Image 
-          width={350}
-          src="assets/logo_perfil.png" 
-          alt="Foto de Perfil"
-          preview={false}
-          style={{ borderRadius: '50%', objectFit: 'cover' }} // Para hacerla circular
-        />
-      </Col>
-    </Row>
+            Combino mis habilidades para construir aplicaciones funcionales.  
+            Además, mi experiencia en Retail Paris como vendedora y atención al cliente los fines de semana me ha enseñado el valor de la comunicación efectiva y la resolución de problemas.
+          </p>
+
+          {/* Botones */}
+          <Space
+            direction="horizontal"
+            size="large"
+            className="mt-3 d-flex flex-wrap justify-content-center justify-content-md-start"
+          >
+            <Button
+              type="primary"
+              size="large"
+              icon={<MailOutlined />}
+              onClick={handleContactClick}
+            >
+              Contáctame
+            </Button>
+
+            <a href="/cv/cv_vale.pdf" download>
+              <Button icon={<DownloadOutlined />}>Descargar CV</Button>
+            </a>
+          </Space>
+
+          {/* Mensaje visible */}
+          {showMessage && (
+            <p
+              className="mt-3 text-success fw-bold"
+              style={{
+                fontSize: "16px",
+                transition: "opacity 0.5s ease-in-out",
+              }}
+            >
+              💙 ¡Gracias por contactarme! Revisa tu correo.
+            </p>
+          )}
+        </Col>
+
+        {/* Columna de imagen */}
+        <Col xs={24} md={10} className="text-center mt-4 mt-md-0">
+          <Image
+            width={300}
+            src="assets/foto_perfil.jpg"
+            alt="Foto de perfil"
+            preview={false}
+            className="img-fluid rounded-circle shadow-lg"
+            style={{
+              objectFit: "cover",
+              border: "3px solid #58a6ff",
+            }}
+          />
+        </Col>
+      </Row>
+    </div>
   );
 };
 
