@@ -6,8 +6,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const { Title, Paragraph, Text } = Typography;
 
 const Home: React.FC = () => {
-
-  // Función para abrir cliente de correo
   const handleContactClick = () => {
     window.location.href = "mailto:va.cortezz@duocuc.cl";
     message.success("Abriendo tu cliente de correo 📩");
@@ -21,7 +19,7 @@ const Home: React.FC = () => {
       padding: "3rem",
     }}>
       <Row justify="center" gutter={[32, 32]}>
-        {/* SECCIÓN DE PERFIL */}
+        
         <Col xs={24} md={12}>
           <Title level={1} style={{ color: "#fff" }}>
             Valentina Cortez Zuñiga
@@ -36,7 +34,6 @@ const Home: React.FC = () => {
           </Paragraph>
 
           <Space size="middle">
-            {/* Botón Contáctame funcional */}
             <Button
               type="primary"
               size="large"
@@ -46,17 +43,16 @@ const Home: React.FC = () => {
               Contáctame
             </Button>
 
-            {/* Botón Descargar CV */}
-            <a href="cv/cv_vale.pdf" download>
-              <Button icon={<DownloadOutlined />}>Descargar CV</Button>
-            </a>
+              <a href="cv/cv_vale.pdf" download>
+                <Button icon={<DownloadOutlined />}>Descargar CV</Button>
+               </a>
           </Space>
         </Col>
 
         <Col xs={24} md={8} style={{ textAlign: "center" }}>
           <Avatar
             size={200}
-            src="assets/foto_perfil.jpg"
+            src="assets/foto_perfil.JPG"
             alt="Foto de perfil"
           />
           <Paragraph style={{ color: "#aaa", marginTop: "1rem" }}>
@@ -64,8 +60,6 @@ const Home: React.FC = () => {
           </Paragraph>
         </Col>
       </Row>
-
-      {/* SECCIÓN DE PROYECTOS */}
       <div style={{ marginTop: "4rem" }}>
         <Title level={2} style={{ color: "#fff", textAlign: "center" }}>
           Proyectos Destacados
@@ -74,7 +68,7 @@ const Home: React.FC = () => {
           {[
             { title: "Organización de eventos", desc: "Coordinación de eventos y atención al cliente como garzona en distintos eventos." },
             { title: "Ventas en Mall / Retail", desc: "Experiencia en atención al cliente, ventas y manejo de stock en tienda retail." },
-            { title: "Formateo y optimización de PC", desc: "Formateé y configuré mi computadora, instalando programas y optimizando el sistema." },
+            { title: "Formateo y optimización de PC", desc:  "Formateé y configuré mi computadora, instalando programas y optimizando el sistema." },
           ].map((p, i) => (
             <Col key={i} xs={24} sm={12} md={8}>
               <Card
@@ -92,6 +86,14 @@ const Home: React.FC = () => {
                 <Button
                   type="primary"
                   href="https://www.espacioriesco.cl"
+                  target="_blank"
+                >
+                  Ver Sitio
+                </Button>
+                <p>{p.desc}</p>
+                <Button
+                  type="primary"
+                  href="paris.cl"
                   target="_blank"
                 >
                   Ver Sitio

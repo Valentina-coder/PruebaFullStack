@@ -11,11 +11,13 @@ interface HomeLayoutProps {
 const HomeLayout: React.FC<HomeLayoutProps> = ({ children }) => {
   return (
     <Layout style={{ minHeight: '100vh' }}>
-      <Header /> {/* ⬅️ Agregamos el Header aquí */}
+      <Header /> 
       <Content style={{ padding: '0 50px', marginTop: 64 }}>
         {children} 
       </Content>
-      {/* Podemos añadir el Footer aquí más adelante */}
+      <Layout.Footer style={{ textAlign: 'center' }}>
+        Portafolio ©2025 Created by Valentina Cortez
+      </Layout.Footer>
     </Layout>
   );
 }

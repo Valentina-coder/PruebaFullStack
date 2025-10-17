@@ -1,5 +1,3 @@
-// app/components/organism/MainBanner/MainBanner.tsx
-
 import React, { useState, useEffect } from "react";
 import { Row, Col, Typography, Button, Space, Image } from "antd";
 import { MailOutlined, DownloadOutlined } from "@ant-design/icons";
@@ -96,11 +94,10 @@ const MainBanner: React.FC = () => {
           )}
         </Col>
 
-        {/* Columna de imagen */}
         <Col xs={24} md={10} className="text-center mt-4 mt-md-0">
           <Image
             width={300}
-            src="assets/foto_perfil.jpg"
+            src="assets/foto_perfil.JPG"
             alt="Foto de perfil"
             preview={false}
             className="img-fluid rounded-circle shadow-lg"

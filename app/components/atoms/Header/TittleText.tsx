@@ -1,5 +1,3 @@
-// app/components/atoms/TitleText/TitleText.tsx
-
 import React from 'react';
 import { Typography } from 'antd';
 import type { CSSProperties } from 'react'; 
