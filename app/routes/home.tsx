@@ -52,7 +52,7 @@ const Home: React.FC = () => {
         <Col xs={24} md={8} style={{ textAlign: "center" }}>
           <Avatar
             size={200}
-            src="assets/foto_perfil.JPG"
+            src="assets/foto_perfil.jpg"
             alt="Foto de perfil"
           />
           <Paragraph style={{ color: "#aaa", marginTop: "1rem" }}>
@@ -88,15 +88,7 @@ const Home: React.FC = () => {
                   href="https://www.espacioriesco.cl"
                   target="_blank"
                 >
-                  Ver Sitio
-                </Button>
-                <p>{p.desc}</p>
-                <Button
-                  type="primary"
-                  href="paris.cl"
-                  target="_blank"
-                >
-                  Ver Sitio
+                  Visitar Sitio
                 </Button>
               </Card>
             </Col>

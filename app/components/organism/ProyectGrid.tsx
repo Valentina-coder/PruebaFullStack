@@ -16,16 +16,16 @@ const PROJECTS_DATA = [
   {
     title: "Ventas en Mall / Retail",
     description: "Experiencia en atención al cliente, ventas y manejo de stock en tienda retail.",
-    technologies: ["React", "TypeScript", "Ant Design", "Chart.js"],
-    imageUrl: "https://via.placeholder.com/600x400?text=Dashboard+Image",
-    repoUrl: "https://github.com/usuario/dashboard-repo",
+    technologies: [""],
+    imageUrl: "h",
+    repoUrl: "h",
   },
   {
     title: "Blog personal con CMS",
-    description: "Sistema de gestión de contenido (CMS) personalizado con una API REST para publicar artículos y gestionar comentarios.",
-    technologies: ["Next.js", "Strapi", "Tailwind CSS", "Node.js"],
-    imageUrl: "https://via.placeholder.com/600x400?text=Blog+Image",
-    repoUrl: "https://github.com/usuario/blog-repo",
+    description: "",
+    technologies: [""],
+    imageUrl: "",
+    repoUrl: "https:/",
   },
 ];
 

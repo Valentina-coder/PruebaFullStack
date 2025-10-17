@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Row, Col, Typography, Button, Space, Image } from "antd";
 import { MailOutlined, DownloadOutlined } from "@ant-design/icons";
 import "bootstrap/dist/css/bootstrap.min.css";
+// ... tus otras importaciones ...
+import ButtonLinkedin from '../atoms/Header/ButtonLinkedin'; 
 
 const { Title, Text } = Typography;
 
@@ -60,7 +62,7 @@ const MainBanner: React.FC = () => {
             Además, mi experiencia en Retail Paris como vendedora y atención al cliente los fines de semana me ha enseñado el valor de la comunicación efectiva y la resolución de problemas.
           </p>
 
-          {/* Botones */}
+          
           <Space
             direction="horizontal"
             size="large"
@@ -78,9 +80,9 @@ const MainBanner: React.FC = () => {
             <a href="/cv/cv_vale.pdf" download>
               <Button icon={<DownloadOutlined />}>Descargar CV</Button>
             </a>
-          </Space>
 
-          {/* Mensaje visible */}
+            
+          </Space>
           {showMessage && (
             <p
               className="mt-3 text-success fw-bold"
@@ -97,7 +99,7 @@ const MainBanner: React.FC = () => {
         <Col xs={24} md={10} className="text-center mt-4 mt-md-0">
           <Image
             width={300}
-            src="assets/foto_perfil.JPG"
+            src="assets/foto_perfil.jpg"
             alt="Foto de perfil"
             preview={false}
             className="img-fluid rounded-circle shadow-lg"
@@ -107,6 +109,29 @@ const MainBanner: React.FC = () => {
             }}
           />
         </Col>
+
+
+<Row
+
+>
+  
+  <Col xs={24} md={12} className="px-4">
+    <Button 
+      type="primary"
+    >
+    </Button>
+    
+
+    
+    <div style={{ marginTop: '20px' }}>
+      <ButtonLinkedin 
+        linkedinUrl="https://www.linkedin.com/in/valentina-cortez-zuniga-51553038b/" 
+        text="Conéctate en LinkedIn"
+      />
+    </div>
+
+  </Col>
+</Row>
       </Row>
     </div>
   );
