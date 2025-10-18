@@ -31,7 +31,7 @@ describe("ProjectCard Component", () => {
     expect(image.src).toContain("/test-image.jpg");
   });
 
-  // Test 3: Verificar botones de acciones
+  // Test 3
   it("debe renderizar el botón de GitHub y Ver Demo con los enlaces correctos", () => {
     render(<ProjectCard {...mockProps} />);
 
@@ -54,7 +54,7 @@ describe("ProjectCard Component", () => {
     });
   });
 
-  // Test 5: Verificar que el Card tenga la propiedad hoverable
+  // Test 5
   it("debe renderizar el Card con la clase hoverable de Ant Design", () => {
     const { container } = render(<ProjectCard {...mockProps} />);
     const card = container.querySelector(".ant-card-hoverable");

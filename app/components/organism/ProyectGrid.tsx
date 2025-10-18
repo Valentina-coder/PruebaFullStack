@@ -17,15 +17,15 @@ const PROJECTS_DATA = [
     title: "Ventas en Mall / Retail",
     description: "Experiencia en atención al cliente, ventas y manejo de stock en tienda retail.",
     technologies: [""],
-    imageUrl: "h",
-    repoUrl: "h",
+    imageUrl: "",
+    repoUrl: "",
   },
   {
-    title: "Blog personal con CMS",
+    title: "Formateo y optimización de PC",
     description: "",
     technologies: [""],
     imageUrl: "",
-    repoUrl: "https:/",
+    repoUrl: "",
   },
 ];
 

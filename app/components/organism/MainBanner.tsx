@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Row, Col, Typography, Button, Space, Image } from "antd";
 import { MailOutlined, DownloadOutlined } from "@ant-design/icons";
 import "bootstrap/dist/css/bootstrap.min.css";
-// ... tus otras importaciones ...
 import ButtonLinkedin from '../atoms/Header/ButtonLinkedin'; 
 
 const { Title, Text } = Typography;
@@ -21,7 +20,7 @@ const MainBanner: React.FC = () => {
 
   const handleContactClick = () => {
     setShowMessage(true);
-    window.location.href = "mailto:va.cortezz@duocuc.cl";
+    window.location.href = "mailto:va.cortezz@duocuc.cl"; 
   };
 
   return (
@@ -32,7 +31,7 @@ const MainBanner: React.FC = () => {
         className="text-center text-md-start"
         gutter={[32, 32]}
       >
-        {/* Columna de texto */}
+
         <Col xs={24} md={12} className="px-4">
           <Text style={{ fontSize: "18px", color: "#8b949e" }}>
             ¡Hola! Mi nombre es
@@ -58,16 +57,17 @@ const MainBanner: React.FC = () => {
               marginTop: 20,
             }}
           >
-            Combino mis habilidades para construir aplicaciones funcionales.  
+            Combino mis habilidades para construir aplicaciones funcionales. 
             Además, mi experiencia en Retail Paris como vendedora y atención al cliente los fines de semana me ha enseñado el valor de la comunicación efectiva y la resolución de problemas.
           </p>
 
-          
+         
           <Space
             direction="horizontal"
             size="large"
             className="mt-3 d-flex flex-wrap justify-content-center justify-content-md-start"
           >
+           
             <Button
               type="primary"
               size="large"
@@ -77,12 +77,17 @@ const MainBanner: React.FC = () => {
               Contáctame
             </Button>
 
+            
             <a href="/cv/cv_vale.pdf" download>
               <Button icon={<DownloadOutlined />}>Descargar CV</Button>
             </a>
 
-            
+            <ButtonLinkedin 
+                linkedinUrl="https://www.linkedin.com/in/valentina-cortez-zuniga-51553038b/" 
+                text="LinkedIn"
+            />
           </Space>
+
           {showMessage && (
             <p
               className="mt-3 text-success fw-bold"
@@ -111,27 +116,7 @@ const MainBanner: React.FC = () => {
         </Col>
 
 
-<Row
 
->
-  
-  <Col xs={24} md={12} className="px-4">
-    <Button 
-      type="primary"
-    >
-    </Button>
-    
-
-    
-    <div style={{ marginTop: '20px' }}>
-      <ButtonLinkedin 
-        linkedinUrl="https://www.linkedin.com/in/valentina-cortez-zuniga-51553038b/" 
-        text="Conéctate en LinkedIn"
-      />
-    </div>
-
-  </Col>
-</Row>
       </Row>
     </div>
   );

@@ -1,4 +1,3 @@
-// El archivo debe ser .ts o .tsx si estás usando Vitest/Jest
 import { describe, it, expect, beforeEach, vi } from 'vitest';
 import routes from '../routes/routes'; 
 
@@ -15,7 +14,7 @@ vi.mock('@react-router/dev/routes', () => ({
   }),
 }));
 
-// --- SUITE DE PRUEBAS ---
+
 describe('Configuración de Rutas Estáticas', () => {
 
   it('debe exportar un array de configuración de rutas', () => {

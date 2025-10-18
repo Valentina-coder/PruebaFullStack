@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { describe, it, expect, vi } from "vitest";
-import ContainerButton from "./ContainerButton"; // Ajusta la ruta si es necesario
+import ContainerButton from "./ContainerButton"; 
 
 describe("ContainerButton Component", () => {
 
