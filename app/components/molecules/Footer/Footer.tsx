@@ -1,15 +1,25 @@
 import React from "react";
-import { Layout, Typography } from "antd";
+import { Typography } from "antd";
 
-const { Footer } = Layout;
 const { Text } = Typography;
 
-const MainFooter: React.FC = () => {
+const Footer: React.FC = () => {
   return (
-    <Footer style={{ textAlign: "center", background: "#f0f2f5", padding: "20px 0" }}>
-      <Text>Portafolio ©2025 Created by Valentina Cortez</Text>
-    </Footer>
+    <div
+      style={{
+        backgroundColor: "#161b22",
+        color: "#ccc",
+        textAlign: "center",
+        padding: "1.5rem 0",
+        marginTop: "2rem",
+        borderTop: "1px solid #30363d",
+      }}
+    >
+      <Text style={{ color: "#7aa2f7" }}>
+        © {new Date().getFullYear()} Valentina Cortez — Portafolio Personal 💻
+      </Text>
+    </div>
   );
 };
 
-export default MainFooter;
+export default Footer;
